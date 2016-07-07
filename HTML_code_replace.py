@@ -1,0 +1,40 @@
+import cgi
+def generate_link(user):
+    u_user = user
+    #u_user = unicode(user, "utf-8")
+    #u_user = cgi.escape(u_user).encode('ascii', 'xmlcharrefreplace')
+    u_user = u_user.replace("%", "%25")
+    u_user = u_user.replace(" ", "%20")
+    u_user = u_user.replace("+", "%2B")
+    u_user = u_user.replace(":", "%3A")
+    u_user = u_user.replace(";", "%3B")
+    u_user = u_user.replace("`", "%60")
+    u_user = u_user.replace("\"", "%22")
+    u_user = u_user.replace("\\", "%5C")
+    #u_user = u_user.replace("/", "%5C")
+    u_user = u_user.replace("#", "%23")    
+    u_user = u_user.replace("&", "%26")
+    u_user = u_user.replace(",", "%2C")
+    u_user = u_user.replace("(", "%28")
+    u_user = u_user.replace(")", "%29")
+    u_user = u_user.replace(">", "%3E")
+    u_user = u_user.replace("<", "%3C")
+    u_user = u_user.replace("[", "%5B")
+    u_user = u_user.replace("]", "%5D")
+    u_user = u_user.replace("{", "%7B")
+    u_user = u_user.replace("}", "%7D")
+    u_user = u_user.replace("|", "%7C")
+    
+    u_user = u_user.replace("$", "%24")
+    u_user = u_user.replace("?", "%3F")
+    u_user = u_user.replace("~", "%7E")
+    u_user = u_user.replace("^", "%5E")
+    u_user = u_user.replace("*", "%2A")
+    u_user = u_user.replace("!", "%21")
+    u_user = u_user.replace("@", "%40")
+    #u_user = u_user.replace("#", "%7C")
+    #u_user = u_user.replace("#", "%7C")
+    #u_user = u_user.replace("#", "%7C")
+    
+    print u_user
+    return "http://www.codewars.com/users/" + u_user
